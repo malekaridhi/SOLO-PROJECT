@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ice skating</title>
+    <script src="main js-1.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+  <div>
+      <button id ='welcome' onclick="image();" > choose your destination </button>
+  </div>
+  <div id ='destinations ' class ='el'></div> 
+</body>
+</html>
+<script>
+ var destinations= []
+destinations.push({ id : "image1", src :'https://cf.bstatic.com/data/xphoto/1182x887/391/39110229.jpg?size=S',title: "Lake Louise in Banff, Canada"})
+destinations.push({ id : "image2", src :'https://cf.bstatic.com/data/xphoto/1182x887/391/39110211.jpg?size=S ',title: "Lac de Joux in Switzerland"})
+destinations.push({ id : "image3", src :'https://cf.bstatic.com/data/xphoto/1182x887/391/39110256.jpg?size=S ',title: "Lake Vänern in Sweden"})
+destinations.push({ id : "image4", src :'https://cf.bstatic.com/data/xphoto/1182x887/391/39110273.jpg?size=S' ,title: "Sokolniki Park in Moscow, Russia"})
+destinations.push({ id : "image5", src :'https://cf.bstatic.com/data/xphoto/1182x887/391/39110298.jpg?size=S',title: "Yosemite National Park in California, USA"})
+
+
+function image (){
+    var elements = $()
+    var elements2 = $()
+    for (i=0;i<destinations.length;i++){
+       elements=elements.add("<img src="+destinations[i].src+`  class = 'image' id=image${i}>`)
+      //  elements2=elements2.add("<h2   class = 'tt' >"+destinations[i].title+"</h2>")
+       elements2=elements2.add(`<h2  id=k${i}>`+destinations[i].title+`</h2>`)
+    }
+    
+    // $('body').append('<button onclick="goBack()">Go Back</button>') 
+    $('body').append("<h1 id='tit'> The world's best outdoor ice rinks</h1>")
+    $('body').append(elements) 
+
+   
+    $('#welcome').hide()
+    $('body').css("background-image", "url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Solid_grey.svg/1200px-Solid_grey.svg.png')")
+    $('#image0').on("click",function(){ 
+    $('body').append("<h3 id='des1' >Lake Louise in Banff, Canada</h3>").append("<p id ='par1'>The glacier-fed Lake Louise is as spectacular during the winter as it is in the summer. Cleared daily of fallen snow, this natural skating rink offers a panoramic view of the surrounding mountains. The rink is topped with a handmade ice castle which you can skate through.Fairmont Château Lake Louise is just steps away from the rink and offers skate rentals in the main lobby.</p>") 
+    $('#des2').remove()
+    $('#des3').remove()  
+    $('#des4').remove()
+    $('#des5').remove()
+    $('#par2').remove()
+    $('#par3').remove()  
+    $('#par4').remove()
+    $('#par5').remove()
+        });
+   $('#image1').on("click",function(){
+    $('body').append( "<h3 id='des2' >Lac de Joux in Switzerland</h3>").append("<p id='par2'>When Lac de Joux freezes over, Europe’s largest free outdoor skating rink is open for business. Lac de Joux covers a span of 9.5 km2 and as the entirety of the lake rarely freezes over, dedicated skating areas are marked where the ice is safe enough to skate on. Vendors set up shop along the shore selling hot chocolate and snacks.Located on the shores of Lac de Joux, Hostellerie la Baie du Lac has an on-site restaurant and bar where you can grab a bite to eat after your day on the lake.</p>") 
+    $('#des1').remove()
+    $('#des3').remove()  
+    $('#des4').remove()
+    $('#des5').remove()
+    $('#par1').remove()
+    $('#par3').remove()  
+    $('#par4').remove()
+    $('#par5').remove()
+        });
+   $('#image2').on("click",function(){
+    $('body').append( "<h3 id='des3' >Lake Vänern in Sweden</h3>").append("<p id ='par3'>The largest lake in Sweden, Lake Vänern is ideal for Nordic skating – recreational long distance skating on natural ice. As Lake Vänern is home to a staggering 22,000 small islands, it’s no surprise that skaters opt for long distance trails to maximise the sights they take in.Stadshotellet Lidköping is a 5-minute walk from the lake.</p>")
+    $('#des1').remove()
+    $('#des2').remove()  
+    $('#des4').remove()
+    $('#des5').remove() 
+    $('#par1').remove()
+    $('#par2').remove()  
+    $('#par4').remove()
+    $('#par5').remove() 
+        });
+        $('#image3').on("click",function(){
+    $('body').append( "<h3 id='des4' >Sokolniki Park in Moscow</h3>").append ("<p id ='par4'>Just outside of the Moscow’s city centre, Sokolniki Park is a green space popular with residents that, d the winter, hosts a 5,400 m2 ice rink. The ice is lined with towering trees and decorated with lights and a large TV screen, making it Moscow’s most colourful and modern outdoor ice rink.Less than 3km from the park, Cosmos Hotel offers an on-site spa with massage services in case you find yourself sore from all the skating.</p>")
+    
+    $('#des1').remove()
+    $('#des2').remove()
+    $('#des3').remove()  
+    $('#des5').remove() 
+    $('#par1').remove()
+    $('#par2').remove()
+    $('#par3').remove()  
+    $('#par5').remove()
+        });
+    $('#image4').on("click",function(){
+    $('body').append( "<h3 id='des5' >Yosemite National Park in California, USA</h3>").append ("<p id='par5'>The Half Dome Village Ice Rink is located inside Yosemite National Park and offers unobstructed views of two of the park’s most famous landmarks: the Half Dome and Glacier Point. When you need a break from skating, you can warm up at the rink-side fire pit, which shares the same amazing views.Winter Wonderland is a cosy holiday home located in Yosemite West. It’s a 40-minute trip to the rink, but the tree-lined mountain roads you’ll take there make for a beautiful drive.<p/>")
+    $('#des4').remove()
+    $('#des1').remove()
+    $('#des2').remove()
+    $('#des3').remove()
+    $('#par4').remove()
+    $('#par1').remove()
+    $('#par2').remove()
+    $('#par3').remove()
+    
+        });
+        
+    
+}
+
+function goBack() {
+ history.back();
+}
+        
+   
+//image(destinations)
+
+</script>
